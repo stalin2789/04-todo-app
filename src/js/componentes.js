@@ -4,6 +4,7 @@ import { tareasLista } from '../index';
 //referencias en el html
 const divTodoList = document.querySelector('.todo-list');
 const inputNewToDo = document.querySelector('.new-todo');
+const buttonClearCompleted = document.querySelector('.clear-completed');
 
 export const crearToDoHtml = ( todo )=> {
     const htmlTodo = `
@@ -55,4 +56,8 @@ divTodoList.addEventListener('click', ( event )=>{
     }
 
     console.log(tareasLista);
+})
+
+buttonClearCompleted.addEventListener('click', ()=>{
+    tareasLista.eliminarCompletados();
 })

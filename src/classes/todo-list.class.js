@@ -33,5 +33,7 @@ export class ToDoList {
 
     eliminarCompletados(){
         
+        this.todos = this.todos.filter(todo => todo.completado != true);
+        
     }
 }
