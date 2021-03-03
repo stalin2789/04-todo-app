@@ -60,4 +60,15 @@ divTodoList.addEventListener('click', ( event )=>{
 
 buttonClearCompleted.addEventListener('click', ()=>{
     tareasLista.eliminarCompletados();
+
+    for (let i = divTodoList.children.length - 1; i >= 0; i--){
+        
+        const elemento = divTodoList.children[i];
+
+        if (elemento.classList.contains('completed')){
+
+            divTodoList.removeChild(elemento);
+        }
+
+    }
 })
