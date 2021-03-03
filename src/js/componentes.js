@@ -1,6 +1,9 @@
-//referencias en el html
+import { ToDo } from '../classes';
+import { tareasLista } from '../index';
 
+//referencias en el html
 const divTodoList = document.querySelector('.todo-list');
+const inputNewToDo = document.querySelector('.new-todo');
 
 export const crearToDoHtml = ( todo )=> {
     const htmlTodo = `
@@ -22,3 +25,30 @@ export const crearToDoHtml = ( todo )=> {
 
     return div.firstElementChild;
 }
+
+//Eventos
+inputNewToDo.addEventListener( 'keyup', ( event ) => {
+
+    if (event.keyCode === 13 && inputNewToDo.value.length > 0){
+        
+        const nuevoToDo = new ToDo(inputNewToDo.value);
+        tareasLista.nuevoToDo(nuevoToDo);
+
+        crearToDoHtml(nuevoToDo);
+        inputNewToDo.value = '';
+    }
+} )
+
+divTodoList.addEventListener('click', ( event )=>{
+
+    const nombreElemento = event.target.localName; //input, label, button
+    const todoElemento = event.target.parentElement.parentElement;
+    const todoId = todoElemento.getAttribute('data-id');
+
+    if (nombreElemento.includes('input')){
+        tareasLista.marcarCompletado(todoId);
+        todoElemento.classList.toggle('completed');
+    }
+
+    console.log(tareasLista);
+})
