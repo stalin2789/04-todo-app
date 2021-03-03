@@ -9,8 +9,11 @@ export class ToDoList {
         this.todos.push(todo);
     }
 
-    elimnarToDo( id ){
+    eliminarToDo( id ){
+        const idInt = parseInt(id, 10);
 
+        this.todos = this.todos.filter( todo => todo.id !== idInt) 
+        //regresa un arreglo excluyendo al del id que le envio
     }
 
     marcarCompletado( id ){
