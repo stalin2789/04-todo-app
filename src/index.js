@@ -26,3 +26,5 @@ export const tareasLista = new ToDoList();
 
 // tareasLista.todos.forEach(todo => crearToDoHtml( todo )); //forma entendible 
 tareasLista.todos.forEach(crearToDoHtml); //forma abreviada
+
+tareasLista.todos[0].imprimirClase();
