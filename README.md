@@ -2,6 +2,11 @@
 
 Proyecto inicial para crear aplicaciones usando webpack.
 
+### Aplicacion desplegada:
+````
+https://stalin2789.github.io/04-todo-app/
+````
+
 ### Notas:
 Recuerden reconstruir los módulos de Node
 ```
